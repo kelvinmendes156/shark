@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+    background: #edf2f7;
+    margin: 0;
+    padding: 20px;
+    color: #2d3748;
+}
+
+h1 {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+form {
+    background: #fff;
+    padding: 14px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 4px #cbd5e1;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.98em;
+    margin: 4px 0 0 0;
+}
+
+form button {
+    background: #4299e1;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+table {
+    margin-top: 18px;
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px #cbd5e1;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+thead {
+    background: #2b6cb0;
+    color: #fff;
+}
+
+#stats {
+    font-size: 1.08em;
+    margin: 14px 0;
+    padding: 10px;
+    background: #e2e8f0;
+    border-radius: 6px;
+}
+
+.tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.tabbutton {
+    background-color: #eee;
+    border: none;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 6px 6px 0 0;
+    font-weight: 600;
+}
+
+.tabbutton.active {
+    background-color: #2b6cb0;
+    color: white;
+}
+
+#filtrosTorneios label {
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+#filtrosTorneios input {
+    margin-left: 6px;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+}
+
+.tabela-resumo table {
+    width: auto;
+    margin-bottom: 18px;
+    background: #f5f7fb;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.tabela-resumo th, .tabela-resumo td {
+    font-size: 0.96em;
+    padding: 6px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.tabela-resumo thead {
+    background: #dbeafe;
+    color: #273c55;
+}
+
+.tabela-resumo tr:last-child td {
+    border-bottom: none;
+}
+
+#resultsTable button {
+    padding: 3px 10px;
+    margin: 0 2px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#resultsTable button:hover {
+    background: #2c5282;
+}
+
