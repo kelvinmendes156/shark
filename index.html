@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Registro de Resultados Poker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Resultados de Poker</h1>
+
+    <div class="tabs">
+        <button class="tabbutton active" data-tab="form">Adicionar Resultado</button>
+        <button class="tabbutton" data-tab="torneios">Torneios</button>
+        <button class="tabbutton" data-tab="estatisticas">Estatísticas</button>
+        <button class="tabbutton" data-tab="graficos">Gráficos</button>
+    </div>
+
+    <div id="form" class="tabcontent">
+        <form id="resultForm">
+            <label>Data: <input type="date" name="data" required /></label>
+            <label>Tipo: <input type="text" name="tipo" placeholder="SNG, MTT..." required /></label>
+            <label>Stake: <input type="number" step="0.01" name="stake" required /></label>
+            <label>Posição: <input type="number" name="posicao" required /></label>
+            <label>Lucro: <input type="number" step="0.01" name="lucro" required /></label>
+            <button type="submit">Salvar resultado</button>
+        </form>
+        <div id="resumoGeral" class="tabela-resumo">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jogador</th>
+                        <th>Contagem</th>
+                        <th>Lucro Méd</th>
+                        <th>Stake Méd</th>
+                        <th>ROI Méd</th>
+                        <th>Lucro</th>
+                        <th>Capacidade</th>
+                    </tr>
+                </thead>
+                <tbody id="resumoBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="torneios" class="tabcontent" style="display:none;">
+        <div id="filtrosTorneios">
+            <label>
+                Filtrar por Tipo:
+                <input type="text" id="filtroTipo" placeholder="Ex: SNG, MTT..." />
+            </label>
+            <label>
+                Data inicial:
+                <input type="date" id="filtroDataInicio" />
+            </label>
+            <label>
+                Data final:
+                <input type="date" id="filtroDataFim" />
+            </label>
+            <button id="botaoFiltrar">Filtrar</button>
+            <button id="botaoLimparFiltro">Limpar filtro</button>
+            <button id="botaoExportarCSV">Exportar CSV</button>
+        </div>
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Stake</th>
+                    <th>Posição</th>
+                    <th>Lucro</th>
+                    <th>ROI (%)</th>
+                    <th>Stake Médio</th>
+                    <th>Lucro/Hora</th>
+                    <th>Capacidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="estatisticas" class="tabcontent" style="display:none;">
+        <div id="stats"></div>
+    </div>
+
+    <div id="graficos" class="tabcontent" style="display:none;">
+        <canvas id="lucroChart" width="800" height="300"></canvas>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+
