@@ -1,43 +1,37 @@
 const express = require('express');
 const cors = require('cors');
-// Importando fetch para Node.js moderno
+// Importação compatible com Node.js moderno e Railway
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const API_URL = 'https://script.google.com/macros/s/AKfycb14zVP.../exec'; // Confirme a URL correta do seu Script
+// Substitua 'SEU_APP_ID' pela ID real do seu Google Apps Script
+const API_URL = 'https://script.google.com/macros/s/AKfycbw14zVPmKZTIICLMo1tOmbsgbKHX7bjL0psMylugRtn5BRBaJBlhbTENMJyQrs6YqVO/exec';
 
 app.all('/proxy', async (req, res) => {
   try {
     const options = {
       method: req.method,
-      headers: {}
+      headers: { 'Content-Type': 'application/json' }, // cabeçalho simples para evitar falhas
     };
 
-    // Se for POST, envia body JSON com o content-type correto
     if (req.method === 'POST') {
-      options.headers['Content-Type'] = 'application/json';
       options.body = JSON.stringify(req.body);
     }
 
-    // Se for GET, remove header Content-Type para evitar problemas
-
     const response = await fetch(API_URL, options);
-    const text = await response.text();
+    const data = await response.text();
 
-    // Retornar o texto direto (JSON ou callback JSONP)
-
-    res.setHeader('Content-Type', response.headers.get('content-type') || 'application/json');
-    res.send(text);
-  } catch (error) {
-    res.status(500).json({error: error.message});
+    res.send(data);
+  } catch (e) {
+    res.status(500).send({ error: e.message });
   }
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Proxy server running on port ${PORT}`);
+  console.log(`Proxy server rodando na porta ${PORT}`);
 });
-
