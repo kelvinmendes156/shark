@@ -1,4 +1,4 @@
-const API_URL = 'https://script.google.com/macros/s/AKfycbxKZNmXDRbYqcbxCymBBODz1HA4IPA3MrcGTP7SwjA/dev';
+const API_URL = 'http://localhost:3000/proxy';
 
 let results = [];
 let editarId = null;
