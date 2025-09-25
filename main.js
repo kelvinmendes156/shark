@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/proxy';
+const API_URL = 'https://shark-production.up.railway.app/proxy';
 
 let results = [];
 let editarId = null;
