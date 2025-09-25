@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // Substitua 'SEU_APP_ID' pela ID real do seu Google Apps Script
-const API_URL = 'https://script.google.com/macros/s/AKfycbw14zVPmKZTIICLMo1tOmbsgbKHX7bjL0psMylugRtn5BRBaJBlhbTENMJyQrs6YqVO/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbz0Riq_4ls3UAp_r66TjH7R9EG90fTo2lnpeqZuBmLkC81IAyvAbBQvVEAciJEzKr2Z/exec';
 
 app.all('/proxy', async (req, res) => {
   try {
